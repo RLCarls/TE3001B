@@ -1,0 +1,29 @@
+# P VS PI vs PD vs PID Controller Family Comparison
+
+This project analyzes and compares 5 controller gain combinations of different controllers.
+
+## 📌 Overview
+
+We evaluate controller performance across multiple gain configurations by analyzing:
+
+- Rise time
+- Overshoot
+- Oscillation
+- Steady-state error
+- Stability
+
+The goal is to observe how increasing integral gain (PI) affects stability and how derivative action (PID) improves damping.
+
+
+## 🔎 Observations
+
+- Increasing Ki reduces steady-state error but increases oscillations.
+- PID controllers allow higher gains while maintaining stability.
+- Derivative action significantly reduces overshoot.
+
+## 🛠️ Technologies Used
+
+- Python
+- NumPy
+- Matplotlib
+
