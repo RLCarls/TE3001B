@@ -1,0 +1,266 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <model name="so101" canonical_body="base">
+    <!-- BASE -->
+    <link name="base">
+      <inertial>
+        <mass>0.147</mass>
+        <pose>0.0137179 -0.0000519711 0.0334843 0 0 0</pose>
+        <inertia>
+          <ixx>0.000114686</ixx>
+          <iyy>0.000136117</iyy>
+          <izz>0.000130364</izz>
+        </inertia>
+      </inertial>
+      <visual name="base_motor_holder_visual">
+        <pose>-0.00636471 -0.0000994414 -0.0024 0.785398 0.785398 0.785398</pose>
+        <geometry><mesh><uri>model://so101/assets/base_motor_holder_so101_v1.stl</uri></mesh></geometry>
+        <material><ambient>1 0.82 0.12 1</ambient></material>
+      </visual>
+      <visual name="base_so101_visual">
+        <pose>-0.00636471 -0.00000000897657 -0.0024 0.785398 0.785398 0.785398</pose>
+        <geometry><mesh><uri>model://so101/assets/base_so101_v2.stl</uri></mesh></geometry>
+        <material><ambient>1 0.82 0.12 1</ambient></material>
+      </visual>
+      <collision name="base_collision">
+        <geometry><mesh><uri>model://so101/assets/base_so101_v2.stl</uri></mesh></geometry>
+      </collision>
+    </link>
+
+    <!-- SHOULDER -->
+    <link name="shoulder">
+      <inertial>
+        <mass>0.100006</mass>
+        <pose>-0.0307604 -0.0000166727 -0.0252713 0 0 0</pose>
+        <inertia>
+          <ixx>0.00008375</ixx>
+          <iyy>0.0000810403</iyy>
+          <izz>0.0000239783</izz>
+        </inertia>
+      </inertial>
+      <visual name="shoulder_v1_visual">
+        <pose>-0.0303992 0.000422241 -0.0417 0.785398 0.785398 -0.785398</pose>
+        <geometry><mesh><uri>model://so101/assets/sts3215_03a_v1.stl</uri></mesh></geometry>
+        <material><ambient>0.1 0.1 0.1 1</ambient></material>
+      </visual>
+      <visual name="motor_holder_base_visual">
+        <pose>-0.0675992 -0.000177759 0.0158499 0.785398 0.785398 -0.785398</pose>
+        <geometry><mesh><uri>model://so101/assets/motor_holder_so101_base_v1.stl</uri></mesh></geometry>
+        <material><ambient>1 0.82 0.12 1</ambient></material>
+      </visual>
+      <visual name="rotation_pitch_visual">
+        <pose>0.0122008 0.0000222413 0.0464 0 -45 0</pose>
+        <geometry><mesh><uri>model://so101/assets/rotation_pitch_so101_v1.stl</uri></mesh></geometry>
+        <material><ambient>1 0.82 0.12 1</ambient></material>
+      </visual>
+      <collision name="shoulder_collision">
+        <geometry><mesh><uri>model://so101/assets/sts3215_03a_v1.stl</uri></mesh></geometry>
+      </collision>
+    </link>
+
+    <!-- UPPER ARM -->
+    <link name="upper_arm">
+      <inertial>
+        <mass>0.103</mass>
+        <pose>-0.0898471 -0.00838224 0.0184089 0 0 0</pose>
+        <inertia>
+          <ixx>0.0000408002</ixx>
+          <iyy>0.000147318</iyy>
+          <izz>0.000142487</izz>
+        </inertia>
+      </inertial>
+      <visual name="shoulder_v1_3_visual">
+        <pose>-0.11257 -0.0155 0.0187 0 -45 0</pose>
+        <geometry><mesh><uri>model://so101/assets/sts3215_03a_v1.stl</uri></mesh></geometry>
+        <material><ambient>0.1 0.1 0.1 1</ambient></material>
+      </visual>
+      <visual name="upper_arm_visual">
+        <pose>-0.065085 0.012 0.0182 0 180 0</pose>
+        <geometry><mesh><uri>model://so101/assets/upper_arm_so101_v1.stl</uri></mesh></geometry>
+        <material><ambient>1 0.82 0.12 1</ambient></material>
+      </visual>
+      <collision name="upper_arm_collision">
+        <geometry><mesh><uri>model://so101/assets/upper_arm_so101_v1.stl</uri></mesh></geometry>
+      </collision>
+    </link>
+
+    <!-- LOWER ARM -->
+    <link name="lower_arm">
+      <inertial>
+        <mass>0.104</mass>
+        <pose>-0.0980701 0.00324376 0.0182831 0 0 0</pose>
+        <inertia>
+          <ixx>0.0000287438</ixx>
+          <iyy>0.000159844</iyy>
+          <izz>0.00014529</izz>
+        </inertia>
+      </inertial>
+      <visual name="under_arm_visual">
+        <pose>-0.0648499 -0.032 0.0182 0 180 0</pose>
+        <geometry><mesh><uri>model://so101/assets/under_arm_so101_v1.stl</uri></mesh></geometry>
+        <material><ambient>1 0.82 0.12 1</ambient></material>
+      </visual>
+      <visual name="motor_holder_wrist_visual">
+        <pose>-0.0648499 -0.032 0.018 0 180 0</pose>
+        <geometry><mesh><uri>model://so101/assets/motor_holder_so101_wrist_v1.stl</uri></mesh></geometry>
+        <material><ambient>1 0.82 0.12 1</ambient></material>
+      </visual>
+      <visual name="shoulder_v1_4_visual">
+        <pose>-0.1224 0.0052 0.0187 0 0 0</pose>
+        <geometry><mesh><uri>model://so101/assets/sts3215_03a_v1.stl</uri></mesh></geometry>
+        <material><ambient>0.1 0.1 0.1 1</ambient></material>
+      </visual>
+      <collision name="lower_arm_collision">
+        <geometry><mesh><uri>model://so101/assets/under_arm_so101_v1.stl</uri></mesh></geometry>
+      </collision>
+    </link>
+
+    <!-- WRIST -->
+    <link name="wrist">
+      <inertial>
+        <mass>0.079</mass>
+        <pose>-0.000103312 -0.0386143 0.0281156 0 0 0</pose>
+        <inertia>
+          <ixx>0.0000368263</ixx>
+          <iyy>0.000025391</iyy>
+          <izz>0.000021</izz>
+        </inertia>
+      </inertial>
+      <visual name="shoulder_no_horn_visual">
+        <pose>0 -0.0424 0.0306 0.785398 0.785398 -0.785398</pose>
+        <geometry><mesh><uri>model://so101/assets/sts3215_03a_no_horn_v1.stl</uri></mesh></geometry>
+        <material><ambient>0.1 0.1 0.1 1</ambient></material>
+      </visual>
+      <visual name="wrist_roll_pitch_visual">
+        <pose>0 -0.028 0.0181 0.785398 -0.785398 -0.785398</pose>
+        <geometry><mesh><uri>model://so101/assets/wrist_roll_pitch_so101_v2.stl</uri></mesh></geometry>
+        <material><ambient>1 0.82 0.12 1</ambient></material>
+      </visual>
+      <collision name="wrist_collision">
+        <geometry><mesh><uri>model://so101/assets/wrist_roll_pitch_so101_v2.stl</uri></mesh></geometry>
+      </collision>
+    </link>
+
+    <!-- GRIPPER -->
+    <link name="gripper">
+      <inertial>
+        <mass>0.087</mass>
+        <pose>0.000213627 0.000245138 -0.025187 0 0 0</pose>
+        <inertia>
+          <ixx>0.0000275087</ixx>
+          <iyy>0.0000433657</iyy>
+          <izz>0.0000345059</izz>
+        </inertia>
+      </inertial>
+      <visual name="shoulder_v1_5_visual">
+        <pose>0.0077 0.0001 -0.0234 0 -45 0</pose>
+        <geometry><mesh><uri>model://so101/assets/sts3215_03a_v1.stl</uri></mesh></geometry>
+        <material><ambient>0.1 0.1 0.1 1</ambient></material>
+      </visual>
+      <visual name="wrist_roll_follower_visual">
+        <pose>0 -0.000218214 0.000949706 0 180 0</pose>
+        <geometry><mesh><uri>model://so101/assets/wrist_roll_follower_so101_v1.stl</uri></mesh></geometry>
+        <material><ambient>1 0.82 0.12 1</ambient></material>
+      </visual>
+      <collision name="gripper_collision">
+        <geometry><mesh><uri>model://so101/assets/sts3215_03a_v1.stl</uri></mesh></geometry>
+      </collision>
+    </link>
+
+    <!-- MOVING JAW -->
+    <link name="moving_jaw_so101_v1">
+      <inertial>
+        <mass>0.012</mass>
+        <pose>-0.00157495 -0.0300244 0.0192755 0 0 0</pose>
+        <inertia>
+          <ixx>0.00000661427</ixx>
+          <iyy>0.00000189032</iyy>
+          <izz>0.00000528738</izz>
+        </inertia>
+      </inertial>
+      <visual name="moving_jaw_visual">
+        <pose>0 0 0.0189 0 0 0</pose>
+        <geometry><mesh><uri>model://so101/assets/moving_jaw_so101_v1.stl</uri></mesh></geometry>
+        <material><ambient>1 0.82 0.12 1</ambient></material>
+      </visual>
+      <collision name="moving_jaw_collision">
+        <geometry><mesh><uri>model://so101/assets/moving_jaw_so101_v1.stl</uri></mesh></geometry>
+      </collision>
+    </link>
+
+    <!-- JOINTS -->
+    <joint name="shoulder_pan" type="revolute">
+      <parent>base</parent>
+      <child>shoulder</child>
+      <origin xyz="0.0388353 -8.97657e-09 0.0624" rpy="0 0 0"/>
+      <axis><xyz>0 0 1</xyz></axis>
+      <limit lower="-1.91986" upper="1.91986" effort="3.35" velocity="1.0"/>
+      <dynamics damping="0.60" friction="0.052"/>
+    </joint>
+
+    <joint name="shoulder_lift" type="revolute">
+      <parent>shoulder</parent>
+      <child>upper_arm</child>
+      <origin xyz="-0.0303992 -0.0182778 -0.0542" rpy="0.785398 -0.785398 -0.785398"/>
+      <axis><xyz>0 0 1</xyz></axis>
+      <limit lower="-1.74533" upper="1.74533" effort="3.35" velocity="1.0"/>
+      <dynamics damping="0.60" friction="0.052"/>
+    </joint>
+
+    <joint name="elbow_flex" type="revolute">
+      <parent>upper_arm</parent>
+      <child>lower_arm</child>
+      <origin xyz="-0.11257 -0.028 0" rpy="0.785398 0 0.785398"/>
+      <axis><xyz>0 0 1</xyz></axis>
+      <limit lower="-1.69" upper="1.69" effort="3.35" velocity="1.0"/>
+      <dynamics damping="0.60" friction="0.052"/>
+    </joint>
+
+    <joint name="wrist_flex" type="revolute">
+      <parent>lower_arm</parent>
+      <child>wrist</child>
+      <origin xyz="-0.1349 0.0052 0" rpy="0.785398 0 -0.785398"/>
+      <axis><xyz>0 0 1</xyz></axis>
+      <limit lower="-1.65806" upper="1.65806" effort="3.35" velocity="1.0"/>
+      <dynamics damping="0.60" friction="0.052"/>
+    </joint>
+
+    <joint name="wrist_roll" type="revolute">
+      <parent>wrist</parent>
+      <child>gripper</child>
+      <origin xyz="0 -0.0611 0.0181" rpy="0.012 -0.012 0.707"/>
+      <axis><xyz>0 0 1</xyz></axis>
+      <limit lower="-2.74385" upper="2.84121" effort="3.35" velocity="1.0"/>
+      <dynamics damping="0.60" friction="0.052"/>
+    </joint>
+
+    <joint name="gripper_joint" type="revolute">
+      <parent>gripper</parent>
+      <child>moving_jaw_so101_v1</child>
+      <origin xyz="0.0202 0.0188 -0.0234" rpy="0.785398 0.785398 0"/>
+      <axis><xyz>0 0 1</xyz></axis>
+      <limit lower="-0.17453" upper="1.74533" effort="3.35" velocity="1.0"/>
+      <dynamics damping="0.60" friction="0.052"/>
+    </joint>
+
+    <!-- PLUGINS DE CONTROL -->
+    <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
+      <joint_name>shoulder_pan</joint_name>
+    </plugin>
+    <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
+      <joint_name>shoulder_lift</joint_name>
+    </plugin>
+    <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
+      <joint_name>elbow_flex</joint_name>
+    </plugin>
+    <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
+      <joint_name>wrist_flex</joint_name>
+    </plugin>
+    <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
+      <joint_name>wrist_roll</joint_name>
+    </plugin>
+    <plugin filename="ignition-gazebo-joint-position-controller-system" name="ignition::gazebo::systems::JointPositionController">
+      <joint_name>gripper_joint</joint_name>
+    </plugin>
+  </model>
+</sdf>
