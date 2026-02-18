@@ -284,10 +284,5 @@ source ~/ros_ws/install/setup.bash
 - [Gazebo Documentation](https://gazebosim.org/docs/)
 - [ROS 2 Humble](https://docs.ros.org/en/humble/)
 
-## 👤 Autor
 
-Proyecto SO101 - Robot Control Laboratory
 
----
-
-**Última actualización**: Febrero 2026
