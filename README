@@ -1,29 +1,83 @@
-# P VS PI vs PD vs PID Controller Family Comparison
+#Robotics Control Lab 4.1
+Este proyecto implementa y evalúa un controlador **PID por articulación** para el brazo robótico SO-101 utilizando **MuJoCo** como simulador principal y **Gazebo** para validación mediante reproducción de trayectorias.
 
-This project analyzes and compares 5 controller gain combinations of different controllers.
+El objetivo del estudio es analizar el comportamiento del sistema bajo distintas configuraciones de ganancias (P, PI, PD y PID), evaluando velocidad de respuesta, overshoot, oscilaciones, error estacionario y esfuerzo de control.
 
-## 📌 Overview
+---
 
-We evaluate controller performance across multiple gain configurations by analyzing:
+## 📁 Estructura del Proyecto
+simulation_code/
+├─ model/
+│ ├─ scene_urdf.xml
+│ ├─ robot_from_urdf.xml
+│ └─ assets/
+├─ data/
+│ └─ runs/
+├─ run_mujoco_simulation.py
+├─ run_all_experiments.py
+├─ plot_csv.py
+├─ export_reference_from_csv.py
+├─ gazebo_replay.py
+├─ so101_control.py
+├─ so101_mujoco_pid_utils.py
+├─ so101_mujoco_utils2.py
+└─ mujoco_simulation.py
+---
 
-- Rise time
-- Overshoot
-- Oscillation
-- Steady-state error
-- Stability
+## ⚙️ Requisitos
 
-The goal is to observe how increasing integral gain (PI) affects stability and how derivative action (PID) improves damping.
+- Ubuntu / Linux
+- Python 3.10+
+- MuJoCo
+- numpy
+- pandas
+- matplotlib
+- dash y plotly (opcional para visualización en tiempo real)
 
+---
 
-## 🔎 Observations
+## 🔧 Instalación del Entorno
 
-- Increasing Ki reduces steady-state error but increases oscillations.
-- PID controllers allow higher gains while maintaining stability.
-- Derivative action significantly reduces overshoot.
+Desde la carpeta del proyecto:
 
-## 🛠️ Technologies Used
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -U pip
+pip install mujoco numpy pandas matplotlib dash plotly
+python -c "import mujoco; print(mujoco.__version__)"
+source .venv/bin/activate
+python run_mujoco_simulation.py --family PID --combo_id test
+export MUJOCO_GL=osmesa
+python run_mujoco_simulation.py --headless --no_plot --family PID --combo_id test
+export MUJOCO_GL=osmesa
+python run_all_experiments.py --outdir data/runs --headless --no-plot \
+  --duration-move 2.0 --duration-hold 2.0
+Se generarán:
 
-- Python
-- NumPy
-- Matplotlib
+CSV individuales por configuración
 
+Gráficas PNG automáticas
+
+all_results.csv con todos los resultados combinados
+python plot_csv.py data/runs/PID_1.csv
+Las gráficas incluyen:
+
+Posición articular vs tiempo
+
+Velocidad articular
+
+Torque total aplicado
+Se pueden activar perfiles de disturbio:
+
+off
+
+smooth
+
+realistic
+
+stress
+
+Ejemplo:
+
+python run_mujoco_simulation.py --disturb_profile smooth --disturb_scale 1.0
